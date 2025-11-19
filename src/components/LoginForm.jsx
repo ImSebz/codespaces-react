@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import '../styles/LoginForm.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import { useState } from "react";
+import "../styles/LoginForm.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const LoginForm = ({ onLogin, isLoading, error }) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
     const [showPassword, setShowPassword] = useState(false);
 
@@ -13,13 +12,13 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
         const newErrors = {};
 
         if (!username.trim()) {
-            newErrors.username = 'El usuario es requerido';
+            newErrors.username = "El usuario es requerido";
         }
 
         if (!password.trim()) {
-            newErrors.password = 'La contraseña es requerida';
+            newErrors.password = "La contraseña es requerida";
         } else if (password.length < 4) {
-            newErrors.password = 'La contraseña debe tener al menos 4 caracteres';
+            newErrors.password = "La contraseña debe tener al menos 4 caracteres";
         }
 
         // Manejo de errores en formulario de login
@@ -52,7 +51,7 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
                             id="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            className={errors.username ? 'input-error' : ''}
+                            className={errors.username ? "input-error" : ""}
                             placeholder="Usuario"
                             disabled={isLoading}
                         />
@@ -69,7 +68,7 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
                                 id="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className={errors.password ? 'input-error' : ''}
+                                className={errors.password ? "input-error" : ""}
                                 placeholder="Contraseña"
                                 disabled={isLoading}
                             />
@@ -79,7 +78,9 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
                                 onClick={() => setShowPassword(!showPassword)}
                                 disabled={isLoading}
                             >
-                                <i className={showPassword ? "fas fa-eye-slash" : "fas fa-eye"}></i>
+                                <i
+                                    className={showPassword ? "fas fa-eye-slash" : "fas fa-eye"}
+                                ></i>
                             </button>
                         </div>
                         {errors.password && (
@@ -87,28 +88,19 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
                         )}
                     </div>
 
-                    {error && (
-                        <div className="auth-error">
-                            {error}
-                        </div>
-                    )}
+                    {error && <div className="auth-error">{error}</div>}
 
-                    <button
-                        type="submit"
-                        className="login-button"
-                        disabled={isLoading}
-                    >
+                    <button type="submit" className="login-button" disabled={isLoading}>
                         {isLoading ? (
                             <>
                                 <span className="spinner"></span>
                                 Cargando...
                             </>
                         ) : (
-                            'Ingresar'
+                            "Ingresar"
                         )}
                     </button>
                 </form>
-
             </div>
         </div>
     );

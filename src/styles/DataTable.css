@@ -75,7 +75,7 @@
     transform: translateY(0);
   }
 }
-
+/* Data Table */
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -158,6 +158,7 @@
   transform: translateY(0);
 }
 
+/* Mensaje de fin de resultados */
 .end-message {
   max-width: 1200px;
   margin: 24px auto 0;

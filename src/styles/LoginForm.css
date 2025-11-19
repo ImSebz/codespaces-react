@@ -1,3 +1,4 @@
+/* Estilos formulario login */
 .login-container {
   min-height: 100vh;
   display: flex;
@@ -10,7 +11,7 @@
 .login-card {
   background: #1a1f2e;
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(249, 115, 22, 0.2);
+  box-shadow: 0 20px 60px #00000066, 0 0 0 1px #f9731633;
   width: 100%;
   max-width: 420px;
   padding: 40px;
@@ -42,6 +43,8 @@
   flex-direction: column;
   gap: 20px;
 }
+
+/* Estilos en forms */
 
 .form-group {
   display: flex;
@@ -115,6 +118,8 @@
   opacity: 0.5;
 }
 
+/* Manejo de errores */
+
 .form-group input.input-error {
   border-color: #ff0000;
 }
@@ -181,6 +186,7 @@
   animation: spin 0.8s linear infinite;
 }
 
+/* Animación de Spinner en login para el texto de cargando */
 @keyframes spin {
   to {
     transform: rotate(360deg);
