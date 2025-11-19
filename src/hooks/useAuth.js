@@ -6,11 +6,13 @@ export const useAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Maneja el proceso de autenticación del usuario
   const login = async (username, password) => {
     setIsLoading(true);
     setError('');
 
-    await new Promise(resolve => setTimeout(resolve, 1500)); // Timeout para simular carga en login
+    // Delay de carga para la carga del componente
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
     if (username === 'admin' && password === '1234') {
       setIsAuthenticated(true);

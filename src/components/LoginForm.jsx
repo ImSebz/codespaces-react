@@ -8,6 +8,7 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
     const [errors, setErrors] = useState({});
     const [showPassword, setShowPassword] = useState(false);
 
+    // Validar los campos del formulario antes de enviar
     const validateForm = () => {
         const newErrors = {};
 
@@ -72,6 +73,7 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
                                 placeholder="Contraseña"
                                 disabled={isLoading}
                             />
+                            {/* Botón para mostrar/ocultar contraseña */}
                             <button
                                 type="button"
                                 className="toggle-password"

@@ -18,19 +18,19 @@ const DataTable = ({ onLogout }) => {
 
 
     // Actualiza los álbumes mostrados cuando cambia la página
-
     useEffect(() => {
         const startIndex = 0;
         const endIndex = currentPage * ITEMS_PER_PAGE;
         setDisplayedAlbums(albums.slice(startIndex, endIndex));
     }, [currentPage, albums]);
 
-    // Consumir Api
+    // Consume la API y obtiene la lista de álbumes
     const fetchAlbums = async () => {
         setIsLoading(true);
         setError('');
 
         try {
+            // Delay de carga para la carga del componente
             await new Promise(resolve => setTimeout(resolve, 1500));
             const response = await axios.get('https://jsonplaceholder.typicode.com/albums');
             setAlbums(response.data);
@@ -43,12 +43,15 @@ const DataTable = ({ onLogout }) => {
         }
     };
 
+    // Incrementa la página actual para cargar más álbumes
     const loadMore = () => {
         setCurrentPage(prevPage => prevPage + 1);
     };
 
+    // Verifica si hay más álbumes por mostrar
     const hasMore = displayedAlbums.length < albums.length;
 
+    // Estado de carga inicial
     if (isLoading) {
         return (
             <div className="data-container">
