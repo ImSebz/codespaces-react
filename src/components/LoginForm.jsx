@@ -22,6 +22,7 @@ const LoginForm = ({ onLogin, isLoading, error }) => {
             newErrors.password = 'La contraseña debe tener al menos 4 caracteres';
         }
 
+        // Manejo de errores en formulario de login
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };

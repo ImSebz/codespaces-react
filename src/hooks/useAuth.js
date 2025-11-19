@@ -23,7 +23,7 @@ export const useAuth = () => {
     }
   };
 
-//  Cierre de sesión
+  // Cierre de sesión
   const logout = () => {
     setIsAuthenticated(false);
     setError('');
